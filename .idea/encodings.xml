@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ handle/fei.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ handle/fei.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ handle/sanguo_edge.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ handle/sanguo_edge.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ handle/sanguo_node.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ handle/xiao.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/TestModel/fei.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/TestModel/name_all.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/TestModel/xiao.json" charset="GBK" />
+  </component>
+</project>
