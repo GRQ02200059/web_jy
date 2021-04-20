@@ -1,8 +1,9 @@
 import os
 
 from django.core import serializers
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.decorators.http import require_http_methods
 
 from TestModel.models import Actions
@@ -14,6 +15,38 @@ import jieba, codecs, math
 import jieba.posseg as pseg
 import jieba
 from django.utils.module_loading import module_dir
+def select(request):
+  if request.method=='POST':
+    name = request.POST.get("text")
+    book=request.POST.get("book")
+
+    print("==="*30)
+    print(name,book)
+    print("===" * 30)
+
+    list1=Links.objects.filter(person_a=name,book=book)
+    print(len(list1))
+    list2=Links.objects.filter(person_b=name,book=book)
+    print(len(list2))
+
+
+    the_nodes = []
+    for node in list1:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+    for node in list2:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+    lists = Persons.objects.filter(book=book)
+    the_lists = []
+    for list in lists:
+      the_lists.append({"name": list.name, "role_id": list.id})
+
+    data = {"nodes": the_lists, "links": the_nodes}
+    print(len(the_lists),len(the_nodes))
+
+
+
+    return render(request, "relationship.html", {"data": data, "book": book})
+
 
 
 def index(request):
@@ -232,13 +265,13 @@ def detail(request,book):
     node_lists = Links.objects.filter(book=book)
     the_nodes = []
     for node in node_lists:
-      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+      the_nodes.append({"source": int(node.a_id)-2400, "target": int(node.b_id)-2400, "relation": node.relation})
   elif (book == "鸳"):
     book = "yuan"
     node_lists = Links.objects.filter(book=book)
     the_nodes = []
     for node in node_lists:
-      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+      the_nodes.append({"source": int(node.a_id)-2600, "target": int(node.b_id)-2600, "relation": node.relation})
 
 
 
@@ -254,16 +287,118 @@ def detail(request,book):
 
   return render(request, "detail.html",{"data":data})
 import json
-def relationship(request):
-  module_dir = os.path.dirname(__file__)
-  file_path = os.path.join(module_dir, 'xiao.json')
-  with open(file_path,"r")as f:
-    load_dict=json.load(f)
-    print(load_dict)
-    f.close()
-  a=load_dict["links"]
-  print(len(a))
+def relationship(request,book):
 
+  if (book == "飞"):
+    book = "fei"
+    node_lists = Links.objects.filter(book=book)
 
+    the_nodes = []
+    for node in node_lists:
+      print("jinlllll")
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "雪"):
+    book = "xue"
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "连"):
+    book = "lian"
 
-  return  render(request,"relation.html",{"dicts":load_dict})
+    the_nodes = []
+    node_lists = Links.objects.filter(book=book)
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "天"):
+    book = "tian"
+
+    the_nodes = []
+    node_lists = Links.objects.filter(book=book)
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "射"):
+    book = "she"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "白"):
+    book = "bai"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "鹿"):
+    book = "lu"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id) - 1200, "target": int(node.b_id) - 1200, "relation": node.relation})
+  elif (book == "书"):
+    book = "shu"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "笑"):
+    book = "xiao"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "神"):
+    book = "shen"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id) - 1800, "target": int(node.b_id) - 1800, "relation": node.relation})
+  elif (book == "剑"):
+    book = "jian"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "倚"):
+    book = "yi"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+  elif (book == "碧"):
+    book = "bi"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id) - 2400, "target": int(node.b_id) - 2400, "relation": node.relation})
+  elif (book == "鸳"):
+    book = "yuan"
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id) - 2600, "target": int(node.b_id) - 2600, "relation": node.relation})
+  else:
+    book = "she"
+
+    node_lists = Links.objects.filter(book=book)
+    the_nodes = []
+    for node in node_lists:
+      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+
+  lists = Persons.objects.filter(book=book)
+  the_lists = []
+  for list in lists:
+    the_lists.append({"name": list.name, "role_id": list.id})
+
+  data = {"nodes": the_lists, "links": the_nodes}
+
+  return render(request, "relationship.html", {"data": data,"book":book})

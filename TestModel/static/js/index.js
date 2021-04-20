@@ -48,8 +48,8 @@ function getTransform(source, target, _dis) {
 
 // 默认配置
 const defaultConfig = {
-    width: 1000,                 // 总画布svg的宽
-    height: 600,                // 高
+    width: 1000000,                 // 总画布svg的宽
+    height: 6000000,                // 高
     nodes: [],                  // 节点数组
     links: [],                  // 线数组
     isHighLight: true,        // 是否启动 鼠标 hover 到节点上高亮与节点有关的节点，其他无关节点透明的功能

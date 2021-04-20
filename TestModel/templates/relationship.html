@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{#            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">#}
+
+    <link href="../static/css/css.css" rel="stylesheet" type="text/css" />
+        <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: #060606;
+    background-size: cover;
+}
+
+</style>
+
+<body>
+<script>
+
+
+
+</script>
+
+<div class="container">
+	<ul class="menu">
+		<li><a href="{% url 'index' %}">回主页</a></li>
+		<li><a href="#">书名切换</a>
+			<ul class="submenu">
+				<li><a href="{% url 'relationship' "飞" %}">飞狐外传</a></li>
+				<li><a href="{% url 'relationship' "雪" %}">雪山飞狐</a></li>
+				<li><a href="{% url 'relationship' "连" %}">连城诀</a></li>
+				<li><a href="{% url 'relationship' "天" %}">天龙八部</a></li>
+				<li><a href="{% url 'relationship' "射" %}">射雕英雄传</a></li>
+				<li><a href="{% url 'relationship' "白" %}">白马啸西风</a></li>
+				<li><a href="{% url 'relationship' "鹿" %}">鹿鼎记</a></li>
+				<li><a href="{% url 'relationship' "笑" %}">笑傲江湖</a></li>
+                <li><a href="{% url 'relationship' "书" %}">书剑恩仇录</a></li>
+                <li><a href="{% url 'relationship' "神" %}">神雕侠侣</a></li>
+                <li><a href="{% url 'relationship' "剑" %}">侠客行</a></li>
+                <li><a href="{% url 'relationship' "倚" %}">倚天屠龙记</a></li>
+                <li><a href="{% url 'relationship' "碧" %}">碧血剑</a></li>
+                <li><a href="{% url 'relationship' "鸳" %}">鸳鸯刀</a></li>
+
+			</ul>
+		</li>
+		<li class="active"><a href="#s2">聚焦</a>
+			<ul class="submenu">
+				<li><a href="#">子菜单A</a></li>
+				<li><a href="#">子菜单B</a></li>
+				<li><a href="#">子菜单C</a></li>
+				<li><a href="#">子菜单D</a></li>
+				<li><a href="#">子菜单E</a></li>
+				<li><a href="#">子菜单F</a></li>
+				<li><a href="#">子菜单G</a></li>
+				<li><a href="#">子菜单H</a></li>
+			</ul>
+		</li>
+		<li><a href="#">搜索</a>
+			<ul class="submenu">
+				<li><a href="#">子菜单A</a></li>
+				<li><a href="#">子菜单B</a></li>
+				<li><a href="#">子菜单C</a></li>
+				<li><a href="#">子菜单D</a></li>
+				<li><a href="#">子菜单E</a></li>
+				<li><a href="#">子菜单F</a></li>
+				<li><a href="#">子菜单G</a></li>
+				<li><a href="#">子菜单H</a></li>
+			</ul>
+		</li>
+        <script>
+            function transefer() {
+                var inputDom = document.getElementById('text');
+               var text=inputDom.value;
+
+                $.ajax({
+                   url: '{% url 'select'  %}',
+                   type: 'POST',
+                   data: {'name':text,'book':'{{book}}'},
+                   success: function (data) {
+
+                          alert(text);
+                       var obj = window.open("about:blank");   //获取新页面的对象
+        obj.document.write(str_response);       //POST获取的返回写入新页面对象
+               }
+
+
+               })
+                alert('成功率');
+
+            }
+
+
+        </script>
+        <form method="post" action="{% url 'select' %}">
+		<div class="input-group">
+      <input style="height: 50px" type="text" class="form-control" name="text" placeholder="查看单个人物关系" >
+            <input value="{{ book }}" type="hidden" name="book">
+      <span class="input-group-btn">
+<input type="submit" value="submit" class="btn btn-primary btn-cube" style="background: #e8e1c4;width: 80px;height: 50px">      </span>
+    </div>
+</form>
+	</ul>
+</div>
+   <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+
+
+  <source src="../static/video/gfp-astro-timelapse.mp4" type="video/mp4">
+
+</video>
+<div id="map" style="width:1400px;height:800px;"></div>
+
+<script src="../static/js/dist.js"></script>
+
+<script>
+
+    let data = {{ data|safe }}
+
+    var map = document.querySelector('#map');
+    console.log(new RelationChart(map,data))
+</script>
+</body>
+</html>

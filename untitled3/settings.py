@@ -80,12 +80,13 @@ WSGI_APPLICATION = 'untitled3.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'web_jy',
         'USER':'lannister',
         'PASSWORD':'lannister',
         'HOST':'39.108.139.175',
         'PORT':'3306',
+        'ENGINE': 'django.db.backends.mysql',
+
     }
 }
 
