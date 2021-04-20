@@ -88,7 +88,7 @@ with codecs.open("fei.txt", "w", "gbk")as f:
     f.write("Source Target Weight\r\n")
     for name, edges in relationships.items():
       for v, w in edges.items():
-        if w > 30:
+        if w > 15:
           f.write(name + " " + v + " " + str(w) + "\r\n")
           links.append({"from": name, "to": v})
           # Link = Links(book="shen", person_a=name, person_b=v, a_id=fei_name_nodes.index(name),

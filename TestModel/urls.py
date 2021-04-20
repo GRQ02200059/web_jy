@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.index, name="index"),
     path("timeline", views.timeline, name="timeline"),
     path("detail/<book>", views.detail, name="detail"),
-    path("relationship",views.relationship,name="relationship"),
+    path("relationship/<book>",views.relationship,name="relationship"),
+    path("select",views.select,name="select")
 
 ]
