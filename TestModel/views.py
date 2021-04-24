@@ -8,13 +8,13 @@ from django.views.decorators.http import require_http_methods
 
 from TestModel.models import Actions
 import os, sys
-from functools import reduce
+# from functools import reduce
 from TestModel.models import *
-
-import jieba, codecs, math
-import jieba.posseg as pseg
-import jieba
-from django.utils.module_loading import module_dir
+#
+# import jieba, codecs, math
+# import jieba.posseg as pseg
+# import jieba
+# from django.utils.module_loading import module_dir
 def select(request):
   if request.method=='POST':
     name = request.POST.get("text")
@@ -43,7 +43,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -61,7 +61,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -79,7 +79,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -97,7 +97,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -115,7 +115,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -133,7 +133,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -151,7 +151,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -169,7 +169,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -187,7 +187,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -205,7 +205,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -223,7 +223,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -241,7 +241,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -259,7 +259,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -277,7 +277,7 @@ def select(request):
       lists = Persons.objects.filter(book=book)
       the_lists = []
       for list in lists:
-        the_lists.append({"name": list.name, "role_id": list.id})
+        the_lists.append({"name": list.name, "role_id": list.id, "avatar": list.img})
 
       data = {"nodes": the_lists, "links": the_nodes}
       print(len(the_lists), len(the_nodes))
@@ -417,116 +417,130 @@ def detail(request,book):
 
 
   if(book=="飞"):
-    book="fei"
-    node_lists = Links.objects.filter(book=book)
-
-    the_nodes = []
-    for node in node_lists:
-      print("jinlllll")
-      the_nodes.append({"source": int(node.a_id)-200, "target": int(node.b_id)-200, "relation": node.relation})
+    pass
+    # book="fei"
+    # node_lists = Links.objects.filter(book=book)
+    #
+    # the_nodes = []
+    # for node in node_lists:
+    #   print("jinlllll")
+    #   the_nodes.append({"source": int(node.a_id)-200, "target": int(node.b_id)-200, "relation": node.relation})
   elif(book=="雪"):
-    book="xue"
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-400, "target": int(node.b_id)-400, "relation": node.relation})
+    pass
+    # book="xue"
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-400, "target": int(node.b_id)-400, "relation": node.relation})
   elif (book == "连"):
-    book = "lian"
-
-    the_nodes = []
-    node_lists = Links.objects.filter(book=book)
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-600, "target": int(node.b_id)-600, "relation": node.relation})
+    pass
+    # book = "lian"
+    #
+    # the_nodes = []
+    # node_lists = Links.objects.filter(book=book)
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-600, "target": int(node.b_id)-600, "relation": node.relation})
   elif (book == "天"):
-    book = "tian"
-
-    the_nodes = []
-    node_lists = Links.objects.filter(book=book)
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-800, "target": int(node.b_id)-800, "relation": node.relation})
+    pass
+    # book = "tian"
+    #
+    # the_nodes = []
+    # node_lists = Links.objects.filter(book=book)
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-800, "target": int(node.b_id)-800, "relation": node.relation})
   elif (book == "射"):
-    book = "she"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
+    pass
+    # book = "she"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id), "target": int(node.b_id), "relation": node.relation})
   elif (book == "白"):
-    book = "bai"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-1000, "target": int(node.b_id)-1000, "relation": node.relation})
+    # book = "bai"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-1000, "target": int(node.b_id)-1000, "relation": node.relation})
+    pass
   elif (book == "鹿"):
-    book = "lu"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-1200, "target": int(node.b_id)-1200, "relation": node.relation})
+    # book = "lu"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-1200, "target": int(node.b_id)-1200, "relation": node.relation})
+    pass
   elif (book == "书"):
-    book = "shu"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-1400, "target": int(node.b_id)-1400, "relation": node.relation})
+    # book = "shu"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-1400, "target": int(node.b_id)-1400, "relation": node.relation})
+    pass
   elif (book == "笑"):
-    book = "xiao"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-1600, "target": int(node.b_id)-1600, "relation": node.relation})
+    # book = "xiao"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-1600, "target": int(node.b_id)-1600, "relation": node.relation})
+    pass
   elif (book == "神"):
-    book = "shen"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-1800, "target": int(node.b_id)-1800, "relation": node.relation})
+    # book = "shen"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-1800, "target": int(node.b_id)-1800, "relation": node.relation})
+    pass
   elif (book == "剑"):
-    book = "jian"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-2000, "target": int(node.b_id)-2000, "relation": node.relation})
+    # book = "jian"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-2000, "target": int(node.b_id)-2000, "relation": node.relation})
+    pass
   elif (book == "倚"):
-    book = "yi"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-2200, "target": int(node.b_id)-2200, "relation": node.relation})
+    # book = "yi"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-2200, "target": int(node.b_id)-2200, "relation": node.relation})
+    pass
   elif (book == "碧"):
-    book = "bi"
-
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-2400, "target": int(node.b_id)-2400, "relation": node.relation})
+    # book = "bi"
+    #
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-2400, "target": int(node.b_id)-2400, "relation": node.relation})
+    pass
   elif (book == "鸳"):
-    book = "yuan"
-    node_lists = Links.objects.filter(book=book)
-    the_nodes = []
-    for node in node_lists:
-      the_nodes.append({"source": int(node.a_id)-2600, "target": int(node.b_id)-2600, "relation": node.relation})
+    # book = "yuan"
+    # node_lists = Links.objects.filter(book=book)
+    # the_nodes = []
+    # for node in node_lists:
+    #   the_nodes.append({"source": int(node.a_id)-2600, "target": int(node.b_id)-2600, "relation": node.relation})
+    pass
 
 
 
-  lists=Persons.objects.filter(book=book)
-  the_lists=[]
-  for list in lists:
-    the_lists.append({"name":list.name,"role_id":list.id})
-
-  data={"nodes":the_lists,"links":the_nodes}
-
-
+  # lists=Persons.objects.filter(book=book)
+  # the_lists=[]
+  # for list in lists:
+  #   the_lists.append({"name":list.name,"role_id":list.id})
+  #
+  # data={"nodes":the_lists,"links":the_nodes}
 
 
-  return render(request, "detail.html",{"data":data})
+
+
+  return render(request, "detail.html")
 import json
 def relationship(request,book):
   if (book == "飞"):
@@ -637,7 +651,7 @@ def relationship(request,book):
   lists = Persons.objects.filter(book=book)
   the_lists = []
   for list in lists:
-    the_lists.append({"name": list.name, "role_id": list.id})
+    the_lists.append({"name": list.name, "role_id": list.id,"avatar":list.img})
 
   data = {"nodes": the_lists, "links": the_nodes}
 
