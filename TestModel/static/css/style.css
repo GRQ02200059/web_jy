@@ -1,5 +1,9 @@
 *{margin:0;padding:0;}
-html,body{font:14px/1.5 normal;font-family:'Microsoft YaHei',Arial,Tahoma,sans-serif;color:#666;overflow-x: hidden;}
+@font-face{
+     font-family: '华文行楷';
+     src: url("../STXINGKA.TTF")format('ttf');
+    }
+html,body{font:14px/1.5 normal;font-family:'华文行楷';color:#666;overflow-x: hidden;}
 a{color:#333;transition:all 0.3s ease-in-out;cursor:pointer;text-decoration: none;}
 a:hover{color:#0a3875;}
 ul,dl{list-style:none;}
