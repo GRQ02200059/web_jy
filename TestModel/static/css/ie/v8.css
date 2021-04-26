@@ -59,7 +59,7 @@
 
 	#intro {
 		-ms-behavior: url('css/ie/backgroundsize.min.htc');
-		background: url('../../images/intro.jpg');
+		background: url('../../images/intro1.jpg');
 		background-size: cover;
 	}
 
