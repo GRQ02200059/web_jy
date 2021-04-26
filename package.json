@@ -1,0 +1,9 @@
+{
+  "name": "web_jy",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "relation-chart": "latest",
+    "relation-graph": "^1.1.0"
+  }
+}
