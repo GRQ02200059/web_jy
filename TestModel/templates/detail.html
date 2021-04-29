@@ -38,10 +38,10 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-                            <li><a href="#intro">回主页</a></li>
+                            <li><a href={% url "index" %}>回主页</a></li>
 							<li><a href="#intro">作品简介</a></li>
-							<li><a href="#one">What I Do</a></li>
-							<li><a href="#two">Who I Am</a></li>
+							<li><a href="#one">主要人物</a></li>
+							<li><a href="#two">作品内核</a></li>
 							<li><a href="#work">作品详情</a></li>
 						</ul>
 					</nav>
@@ -54,7 +54,7 @@
 					<header>
 						<h2>神雕侠侣</h2>
 					</header>
-					<p>千古文人侠客梦，肯将碧血写丹青</p>
+					<p>侠之大者，为国为民</p>
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
 					</footer>
@@ -65,11 +65,9 @@
 			<section id="one" class="main style2 right dark fullscreen">
 				<div class="content box style2">
 					<header>
-						<h2>What I Do</h2>
+						<h2>主要人物</h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					<p>《射雕英雄传》杨康与穆念慈（旧版是杨康与秦南琴）之子，俊朗聪明、性格狂傲，年少时反抗名教桎梏，讨厌礼教习俗，在爱情与恩义之间挣扎。精通《玉女心经》、全真教的武功、和部分《九阴真经》。后又得北丐洪七公及黄蓉分别传授打狗棒法的招式及心法；又得东邪黄药师传授玉箫剑法和弹指神通；并得西毒欧阳锋传授少量蛤蟆功和逆转经脉的心法，在第一代的天下五绝中，除南帝外可算得上兼习各家，而其本门古墓派的师祖女侠林朝英又是一位武学堪与五绝比肩的高手，杨过可谓尽集当代顶级绝学于一身。遭郭芙断臂后，以玄铁剑练成独孤求败的剑法，又自创黯然销魂掌，终卓然成家而臻绝顶高手之境。其后行侠仗义，赢得“神雕大侠”的名号，武林上下，无论正邪黑白，尽都服膺于其为人而或听其号令，或视其为知己，或以其为马首是瞻，“神雕大侠”俨然为一另类的武林盟主。结尾时成为“新天下五绝”中的“西狂”，与小龙女相偕隐居。</p>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
@@ -100,8 +98,12 @@
 					<!-- Lightbox Gallery  -->
 						<div class="container 75% gallery">
 							<div class="row 0% images">
-								<div class="6u"><a href="../static/images/fulls/01.jpg" class="image fit from-left"><img src="../static/images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="6u"><a href="../static/images/fulls/02.jpg" class="image fit from-right"><img src="../static/images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
+								<div class="6u">
+                                    <a href="../static/images/fulls/01.jpg" class="image fit from-left">
+                                        <img src="../static/images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+								<div class="6u">
+                                    <a href="../static/images/fulls/02.jpg" class="image fit from-right">
+                                        <img src="../static/images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
 							</div>
 							<div class="row 0% images">
 								<div class="6u"><a href="../static/images/fulls/03.jpg" class="image fit from-left"><img src="../static/images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
